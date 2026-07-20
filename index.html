@@ -1,0 +1,65 @@
+<!-- 
+    1. receber valor inserido
+    2. Valores e seus respectivos tempos:
+        (R$1,00) 30min; (R$1,75) 60min; (R$3,00) 120min
+    3. Calcular e exibir o troco(se houver) com base nas opções anteriores
+    4. Exibir "Valor insuficiente" caso valor seja < R$1,00
+  -->
+
+<!DOCTYPE html>
+<html lang="pt-BR">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link rel="stylesheet" href="./styles/style.css" />
+    <script src="./scripts/script.js" defer></script>
+    <title>Parquímetro</title>
+</head>
+<body>
+    <main>
+        <h1>Parquímetro</h1>
+        <section class="info">
+            <h2>Calcule seu tempo de permanência</h2>
+            <p>Para confirmar a opção desejada, escolha o tempo necessário e insira o valor</p>
+            <p>Seu troco sera calculado baseado na tabela a seguir:</p>
+            <table>
+                <caption>Tabela de Preços</caption>
+                <thead>
+                    <tr>
+                        <th>Valor</th>
+                        <th>Permanência</th>
+                    </tr>
+                </thead>
+                <tbody>
+                    <tr>
+                        <td>R$ 1,00</td>
+                        <td>30 min</td>
+                    </tr>
+                    <tr>
+                        <td>R$ 1,75</td>
+                        <td>60 min</td>
+                    </tr>
+                    <tr>
+                        <td>R$ 3,00</td>
+                        <td>120 min</td>
+                    </tr>
+                </tbody>
+            </table>
+            <p class="observacao"> Valores inferiores a R$ 1,00 não são aceitos.</p>
+        </section>
+        <section class="parquimetro-form">
+            <label for="categoria">Escolha o tempo desejado: </label>
+            <select id="categoria" name="categoria">
+                <option value="" disabled selected>Tempos disponíveis</option>
+                <option value="30">30 minutos</option>
+                <option value="60">60 minutos</option>
+                <option value="120">120 minutos</option>
+            </select>
+            <label for="valor">Informe o valor:</label>
+            <input type="number" id="valor" placeholder="Valor a pagar" required/>
+            <button type="button" onclick="calcularValor()">Calcular tempo e troco</button>
+            <p id="resultado"></p>
+        </section>
+    </main>
+</body>
+</html>
